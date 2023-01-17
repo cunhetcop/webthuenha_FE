@@ -1,0 +1,131 @@
+<!--<div class="container-login100-form-btn">-->
+
+
+<!--<div class="container-login100-form-btn">-->
+<!--  <h1>Trang web hiện tại đang nâng cấp giao diện, hẹn các bạn tại sprint tiếp theo.</h1>-->
+<!--</div>-->
+<!--  <div class="container-login100-form-btn" data-tilt style="width: 450px; height: 400px">-->
+
+<!--    <img src="../../../assets/img/vintay.png" style="width: 450px; height: 400px">-->
+<!--    <button type="button" class="btn btn-primary" routerLink="/login">Đăng nhập</button>-->
+<!--<br>-->
+<!--    Hoặc-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <button type="button" class="btn btn-primary" routerLink="/register">Đăng ký tài khoản</button>-->
+<!--  </div>-->
+<!--</div>-->
+<nav>
+  <div class="logo">
+    <img src="assets/img/vintay.png" style="width: 55px;height: 55px" alt="Logo Image">
+  </div>
+  <div class="hamburger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Solutions</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="/login"><button class="login-button">Sign in</button></a></li>
+    <li><a href="/register"><button class="join-button">Sign up</button></a></li>
+  </ul>
+</nav>
+
+
+<script>
+
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links li");
+
+  hamburger.addEventListener('click', ()=>{
+    //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+      link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+  });
+
+</script>
+
+<div class="container" style="padding-top: 80px">
+  <div class="row ">
+    <div class="col-md-6">
+      <div class="media blog-media">
+        <a href="#"><img class="d-flex" src="https://cafefcdn.com/thumb_w/650/203337114487263232/2023/1/13/photo1673577564432-1673577564517740465340.jpg" alt="Generic placeholder image"></a>
+        <div class="circle">
+          <h5 class="day">14</h5>
+          <span class="month">sep</span>
+        </div>
+        <div class="media-bodxy" style="color: black">
+          <a href=""><h5 class="mt-0" style="color: black">Dự báo bất ngờ về diễn biến giá đất nền phía Nam trong năm 2023</h5></a>Chuyên gia bất động sản đưa ra dự báo, giá bán sơ cấp phân khúc đất nền duy trì mức ổn định, khó có những sự tăng giá đột biến trong năm 2023...
+          <a href="https://cafef.vn/du-bao-bat-ngo-ve-dien-bien-gia-dat-nen-phia-nam-trong-nam-2023-20230113094314591.chn" class="post-link"style="color: black">Xem thêm</a>
+          <ul>
+            <li>by: Admin</li>
+            <li class="text-right"><a href="#">07 comments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="media blog-media">
+        <a href="#"><img class="d-flex" src="https://cafefcdn.com/thumb_w/650/203337114487263232/2023/1/11/photo1673395425359-1673395425506795657249.jpg" alt="Generic placeholder image"></a>
+        <div class="circle">
+          <h5 class="day">12</h5>
+          <span class="month">sep</span>
+        </div>
+        <div class="media-body" style="color: black">
+          <a href=""><h5 class="mt-0"style="color: black">Giao dịch biệt thự/liền kề Hà Nội đìu hiu, giá có giảm?</h5></a>Trong năm 2022, ở thị trường sơ cấp, một số chủ đầu tư đã có sự điều chỉnh giá bán biệt thự/liền kề. Còn tại thị trường thứ cấp, năm 2022 chứng kiến...
+          <a href="https://cafef.vn/giao-dich-biet-thu-lien-ke-ha-noi-diu-hiu-gia-co-giam-20230111070506639.chn" class="post-link"style="color: black">Xem thêm</a>
+          <ul>
+            <li>by: Admin</li>
+            <li class="text-right"><a href="#">04 comments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="media blog-media">
+        <a href="#"><img class="d-flex" src="https://cafefcdn.com/thumb_w/650/203337114487263232/2023/1/13/photo1673587549450-1673587549866577754902.jpg" alt="Generic placeholder image"></a>
+        <div class="circle">
+          <h5 class="day">09</h5>
+          <span class="month">sep</span>
+        </div>
+        <div class="media-body"style="color: black">
+          <a href=""><h5 class="mt-0"style="color: black">Tin vui cho thị trường địa ốc 2023: Dòng vốn đổ mạnh, pháp lý gỡ vướng, hạ tầng giao thông được đầu tư</h5></a> Sẽ còn những khó khăn khi thị trường địa ốc vừa trải qua một năm đầy biến động, song, bước sang năm 2023, loạt tin vui...
+          <a href="https://cafef.vn/tin-vui-cho-thi-truong-dia-oc-2023-dong-von-do-manh-phap-ly-go-vuong-ha-tang-giao-thong-duoc-dau-tu-20230113122705512.chn" class="post-link"style="color: black">Xem thêm</a>
+          <ul>
+            <li>by: Admin</li>
+            <li class="text-right"><a href="#">10 comments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="media blog-media">
+        <a href="#"><img class="d-flex" src="https://storage.googleapis.com/digital-platform/hinh_anh_phong_bungalow_la_gi_nhung_dieu_chua_biet_ve_nha_bungalow_so_8_4e080c5664/hinh_anh_phong_bungalow_la_gi_nhung_dieu_chua_biet_ve_nha_bungalow_so_8_4e080c5664.jpg" alt="Generic placeholder image"></a>
+        <div class="circle">
+          <h5 class="day">04</h5>
+          <span class="month">sep</span>
+        </div>
+        <div class="media-body"style="color: black">
+          <a href=""><h5 class="mt-0"style="color: black">Dự báo tương lai thị trường bất động sản Hà Nội: Sẽ chứng kiến bước phục hồi mạnh mẽ?</h5></a>Ông Matthew Powell, Giám đốc Savills Hà Nội nhận định các chính sách hỗ trợ, tháo gỡ khó khăn, phát triển cơ sở hạ tầng sẽ...
+          <a href="https://cafefcdn.com/thumb_w/640/203337114487263232/2023/1/12/photo1673484024804-1673484024947134965357.jpg" class="post-link"style="color: black">Xem thêm</a>
+          <ul>
+            <li>by: Admin</li>
+            <li class="text-right"><a href="#">06 comments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
