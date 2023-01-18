@@ -22,6 +22,10 @@ export class RegisterComponent implements OnInit {
     email:""
   }
 
+
+
+
+
   signupForm = new FormGroup({
     userName : new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)]),
