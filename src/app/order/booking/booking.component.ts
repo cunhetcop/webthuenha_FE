@@ -7,6 +7,8 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {EmailDetails} from "../../model/emailDetails";
 import {EmailService} from "../../service/email.service";
 import Swal from "sweetalert2";
+import * as moment from "moment";
+moment.locale('vi');
 
 @Component({
   selector: 'app-booking',
@@ -82,7 +84,7 @@ export class BookingComponent implements OnInit {
     this.orderService.changeOderStatus(id, this.orderStatus).subscribe(() => {
       let startDate: Date;
       let endDate: Date;
-      let subject = "Bạn đã đặt thành công một căn nhà trên AirBlade";
+      let subject = "Bạn đã đặt thành công một căn nhà trên VinTạy";
       let msgBody = "";
       let recipient: string = "";
       let houseId = 0;
@@ -128,7 +130,7 @@ export class BookingComponent implements OnInit {
   cancelByConfirm(id: any) {
     this.orderStatus = 4;
     this.orderService.changeOderStatus(id, this.orderStatus).subscribe(() => {
-      let subject = "Rất tiếc phải hủy một đơn hàng của bạn trên AirBlade";
+      let subject = "Rất tiếc phải hủy một đơn hàng của bạn trên VinTạy";
       let msgBody = "";
       let recipient: string = "";
       this.orderService.showOrderById(id).subscribe(res => {
@@ -140,10 +142,11 @@ export class BookingComponent implements OnInit {
       console.log(eror)
     })
   }
+
   cancel(id: any) {
     this.orderStatus = 4;
     this.orderService.changeOderStatus(id, this.orderStatus).subscribe(() => {
-      let subject = "Rất tiếc phải hủy một đơn hàng của bạn trên AirBlade";
+      let subject = "Rất tiếc phải hủy một đơn hàng của bạn trên VinTạy";
       let msgBody = "";
       let recipient: string = "";
       this.orderService.showOrderById(id).subscribe(res => {

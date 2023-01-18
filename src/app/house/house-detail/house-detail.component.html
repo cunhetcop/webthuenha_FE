@@ -57,20 +57,15 @@
         </div>
         <br>
         <br>
+
         <div class="row justify-content-between">
           <div class="col-md-5 col-lg-4">
-            <div class="property-price d-flex justify-content-center foo">
-              <div class="card-header-c d-flex">
-                <div class="card-box-ico">
-                  <a [routerLink]="['/orders',houseId]" class="btn btn-info" style="width: 200px; height: 50px">THUÊ NHÀ</a>
-                </div>
-              </div>
-            </div>
+
             <div class="property-summary">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d section-t4">
-                    <h3 class="title-d">Tóm tắt</h3>
+                    <h3 class="title-d">Thông tin căn nhà</h3>
                   </div>
                 </div>
               </div>
@@ -110,6 +105,16 @@
                     <strong>Bãi gửi xe:</strong>
                     <span>Có</span>
                   </li>
+
+                  <li class="d-flex justify-content-between">
+                    <strong>Mô tả:</strong>
+                    <span>{{description}}</span>
+                  </li>
+
+                  <li class="d-flex justify-content-between">
+                    <strong>Tiện ích:</strong>
+                    <span>phòng bếp, TV, mạng internet, vườn.</span>
+
                   <li class="d-flex justify-content-between">
                     <strong>Đánh giá:</strong>
                     <span>
@@ -138,37 +143,89 @@
             </div>
           </div>
           <div class="col-md-7 col-lg-7 section-md-t3">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="title-box-d">
-                  <h3 class="title-d">Mô tả</h3>
+              <div class="row section-t3">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d" style="padding-top: 17px">Thông tin chủ nhà</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="property-description">
-              <p class="description color-text-a" style="color: grey;">
-                {{description}}
-              </p>
-            </div>
-            <div class="row section-t3">
-              <div class="col-sm-12">
-                <div class="title-box-d">
-                  <h3 class="title-d">Tiện ích</h3>
+              <div class="row">
+                <div class="col-md-6 col-lg-4">
+                  <img src="{{houseUser.avatar}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="property-agent">
+                    <h4 class="title-agent">{{houseUser.username}}</h4>
+                    <p class="color-text-a" style="color: grey;">
+                      5 lít bao phòng
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="d-flex justify-content-between">
+                        <strong>Phone:</strong>
+                        <span class="color-text-a" style="color: grey;">{{houseUser.phoneNumber}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Họ và Tên:</strong>
+                        <span class="color-text-a" style="color: grey;">{{houseUser.fullName}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Email:</strong>
+                        <span class="color-text-a" style="color: grey;">{{houseUser.email}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Địa chỉ:</strong>
+                        <span class="color-text-a" style="color: grey;">{{houseUser.userAddress}}</span>
+                      </li>
+                    </ul>
+                    <div class="socials-a">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                  <div class="property-contact">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="amenities-list color-text-a">
-              <ul class="list-a no-margin" style="color: black">
-
-                <li>Phòng bếp</li>
-                <li>Truyền hình cáp</li>
-                <li>Mạng</li>
-                <li>Sân</li>
-              </ul>
+          </div>
+        </div>
+        <div class="property-price d-flex justify-content-center foo">
+          <div class="card-header-c d-flex">
+            <div class="card-box-ico">
+              <a [routerLink]="['/orders',houseId]" class="btn btn-primary" style="width: 200px; height: 50px">THUÊ NHÀ</a>
             </div>
           </div>
         </div>
       </div>
+
+
       <div class="col-md-10">
         <strong>Nhận xét:</strong>
         <br>
@@ -205,109 +262,38 @@
       <form [formGroup]="commentForm" (ngSubmit)="createComment()">
         <textarea formControlName="comment" class="form-control p-4 "  id="description"
                   placeholder="Hãy nhập nhận xét của bạn"></textarea>
-        <button type="submit" class="btn btn-success">Xác nhận</button>
+        <button type="submit" class="btn btn-primary">Xác nhận</button>
       </form>
       </div>
-      <div class="col-md-10 offset-md-1">
-        <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active"  data-toggle="pill" href="#pills-video" role="tab"
-               aria-controls="pills-video" aria-selected="true">Video</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans"
-               aria-selected="false">Ảnh 360 độ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
-               aria-selected="false">Bản đồ</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-            <iframe width="100%" height="460" src="https://www.youtube-nocookie.com/embed/1THxR8XbBrg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-            <img src="" alt="" class="img-fluid">
-          </div>
-          <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9244163006656!2d105.76602881479451!3d21.035710085994676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b9444c676b%3A0xe713200541b7456d!2sCodeGym!5e0!3m2!1sen!2s!4v1670485553472!5m2!1sen!2s" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="row section-t3">
-          <div class="col-sm-12">
-            <div class="title-box-d">
-              <h3 class="title-d">Thông tin chủ trọ</h3>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <img src="{{houseUser.avatar}}" alt="" class="img-fluid">
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="property-agent">
-              <h4 class="title-agent">{{houseUser.username}}</h4>
-              <p class="color-text-a" style="color: grey;">
-               Chủ nhà dễ tính.
-              </p>
-              <ul class="list-unstyled">
-                <li class="d-flex justify-content-between">
-                  <strong>Phone:</strong>
-                  <span class="color-text-a" style="color: grey;">{{houseUser.phoneNumber}}</span>
-                </li>
-                <li class="d-flex justify-content-between">
-                  <strong>Họ và Tên:</strong>
-                  <span class="color-text-a" style="color: grey;">{{houseUser.fullName}}</span>
-                </li>
-                <li class="d-flex justify-content-between">
-                  <strong>Email:</strong>
-                  <span class="color-text-a" style="color: grey;">{{houseUser.email}}</span>
-                </li>
-                <li class="d-flex justify-content-between">
-                  <strong>Địa chỉ:</strong>
-                  <span class="color-text-a" style="color: grey;">{{houseUser.userAddress}}</span>
-                </li>
-              </ul>
-              <div class="socials-a">
-                <ul class="list-inline">
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-dribbble" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <div class="property-contact">
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div class="col-md-10 offset-md-1">-->
+<!--        <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link active"  data-toggle="pill" href="#pills-video" role="tab"-->
+<!--               aria-controls="pills-video" aria-selected="true">Video</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link"  data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans"-->
+<!--               aria-selected="false">Ảnh 360 độ</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link"  data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"-->
+<!--               aria-selected="false">Bản đồ</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--        <div class="tab-content" id="pills-tabContent">-->
+<!--          <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">-->
+<!--            <iframe width="100%" height="460" src="https://www.youtube-nocookie.com/embed/mZb57JSF04k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--          <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">-->
+<!--            <img src="" alt="" class="img-fluid">-->
+<!--          </div>-->
+<!--          <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">-->
+<!--            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9244163006656!2d105.76602881479451!3d21.035710085994676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b9444c676b%3A0xe713200541b7456d!2sCodeGym!5e0!3m2!1sen!2s!4v1670485553472!5m2!1sen!2s" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+
     </div>
   </div>
 </section>

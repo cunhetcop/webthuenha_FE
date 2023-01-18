@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./order-wait.component.css']
 })
 export class OrderWaitComponent {
+  houseUser!: User;
   page: number = 0;
   listOrderByUserId: Order[] = [];
   id: number = 0;

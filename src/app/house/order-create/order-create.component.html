@@ -34,6 +34,10 @@
           <div class="summary-list">
             <ul class="list">
               <li class="d-flex justify-content-between">
+                <strong>Chủ nhà:</strong>
+                <span>{{house.user?.username}}</span>
+              </li>
+              <li class="d-flex justify-content-between">
                 <strong>Tên nhà:</strong>
                 <span>{{house.houseName}}</span>
               </li>
@@ -76,6 +80,7 @@
             <div class="icon-box-content table-cell">
               <div class="icon-box-title">
                 <button (click)="submit()" class="btn btn-info">Thuê Nhà</button>
+
               </div>
             </div>
           </div>

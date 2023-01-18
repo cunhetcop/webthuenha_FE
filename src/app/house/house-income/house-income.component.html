@@ -32,24 +32,32 @@
     </div>
   </div>
 </section>
+
 <section class="agent-single">
 
   <div class="container" >
       <div class="col-sm-12">
         <form [formGroup]="form" (ngSubmit)="submit()" >
+
           <table style="width: 100%">
-            <td>
-              <select formControlName="houseId"  style="height: 50px;width: 300px; border-radius: 20px">
+            <thead>
+            <tr>
+              <th scope="col">Nhà của tôi</th>
+              <th scope="col">Thời gian tính thu nhập</th>
+              <th scope="col" colspan="2"></th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">                <select formControlName="houseId"  style="height: 50px;width: 300px; border-radius: 20px">
                 <option *ngFor="let house of listHouse" value="{{house.id}}" >{{house.houseName}}</option>
-              </select>
-            </td>
-            <td>
-              <input type="month" formControlName="month" class="border border-secondary" style=" height: 50px;width: 300px;border-radius: 20px">
-            </td>
-            <td>
-              <input type="submit" value="Xác nhận" class="btn btn-info" style="height: 50px; width: 100px">
-            </td>
-        </table>
+              </select></th>
+              <td>                <input type="month" formControlName="month" class="border border-secondary" style=" height: 50px;width: 300px;border-radius: 20px">
+              </td>
+              <td>              <input type="submit" value="Xác nhận" class="btn btn-primary" style="height: 50px; width: 100px"></td>
+            </tr>
+          </table>
         </form>
         <div class="row"*ngIf="check">
           <div class="col-md-6">

@@ -53,12 +53,15 @@
           </button>
         </div>
 
-
+<div style="padding-top: 15px">
+  ⎯⎯⎯Đăng nhập bằng tài khoản Google⎯⎯⎯
+</div>
+        <span class="container-login1001">
           <asl-google-signin-button *ngIf="!social"> </asl-google-signin-button>
           <div *ngIf="social">
             <img src="{{social.photoUrl}}">
         </div>
-
+        </span>
         <div class="text-center">
           <a class="txt2" routerLink="/register">
             Đăng ký tài khoản!

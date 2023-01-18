@@ -19,14 +19,14 @@
           <a class="nav-link" routerLink="/home">Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/house/list',0]">Danh sách phòng</a>
+          <a class="nav-link" [routerLink]="['/house/list',0]">Danh sách nhà</a>
         </li>
         <li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Theo dõi</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/booking',0]">Lịch sử phiếu thuê nhà</a>
+            <a class="dropdown-item" [routerLink]="['/booking',0]">Lịch sử phiếu thuê nhà cần bạn xác nhận</a>
             <a class="dropdown-item" [routerLink]="['/orderPast',0]">Lịch sử thuê nhà</a>
-            <a class="dropdown-item" [routerLink]="['/orderWait',0]">Phiếu thuê chờ xác nhận</a>
+            <a class="dropdown-item" [routerLink]="['/orderWait',0]">Lịch sử phiếu thuê nhà đang đợi xác nhận</a>
             <a class="dropdown-item" routerLink="/house/houseIncome">Thu nhập</a>
           </div>
         </li>

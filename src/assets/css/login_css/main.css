@@ -149,7 +149,17 @@
     align-items: center;
     padding: 15px;
   }
-
+  .container-login1001 {
+    padding-top: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
   .wrap-login100 {
     width: 960px;
     background: #fff;
@@ -202,7 +212,7 @@
     position: relative;
     width: 100%;
     z-index: 1;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
 
   .input100 {

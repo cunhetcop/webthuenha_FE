@@ -43,11 +43,11 @@
                   <div class="properties-location"><i class="icon_pin"></i><p style="font-size: 24px"><strong>Địa chỉ: </strong>{{order.house?.houseAddress}}</p></div>
                   <p style="font-size: 24px">
                     <strong>Ngày bắt đầu: </strong>
-                    {{covert(order.startTime)}}
+                    {{ order.startTime | date:'dd/MM/yyyy' : 'vi' }}
                   </p>
                   <p style="font-size: 24px">
                     <strong>Ngày kết thúc: </strong>
-                    {{covert(order.endTime)}}
+                    {{ order.endTime | date:'dd/MM/yyyy' : 'vi' }}
                   </p>
                   <p style="font-size: 24px">
                     <strong>Trạng thái: </strong>

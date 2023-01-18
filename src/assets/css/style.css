@@ -524,7 +524,7 @@ a:hover {
 
 .navbar-default {
   transition: all .5s ease-in-out;
-  background-color: pink;
+  background-color:#4892F1;
   padding-top: 28px;
   padding-bottom: 28px;
   -webkit-backface-visibility: hidden;

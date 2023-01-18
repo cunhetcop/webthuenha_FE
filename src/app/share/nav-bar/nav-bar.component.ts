@@ -59,7 +59,7 @@ export class NavBarComponent implements OnInit{
   getAllComments(id:number) {
     this.commentService.CommentNotRead(id).subscribe(result => {
         this.comment = result;
-        console.log(this.comment)
+        // console.log(this.comment)
       }, error => {
         console.log(error);
       }
