@@ -51,17 +51,17 @@
 
 <!--        Thông báo trạng thái-->
 
-<!--        <li class="nav-item dropdown" >-->
-<!--          <h2>-->
-<!--            <i class="fa fa-bell" aria-hidden="true" style="margin-top: 15px;"></i><sup style="color: red">{{comment.length}}</sup>-->
-<!--          </h2>-->
-<!--          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >-->
-<!--            <div *ngFor="let com of comment ; index as i">-->
-<!--              <a class="dropdown-item" [routerLink]="['/detail',com.house?.id]"  (click)="isRead(com.id)" >-->
-<!--                  Bạn có 1 nhận xét chưa đọc từ ngôi nhà {{com.house?.houseName}} </a>-->
-<!--          </div>-->
-<!--          </div>-->
-<!--        </li>-->
+        <li class="nav-item dropdown" >
+          <h2>
+            <i class="fa fa-bell" aria-hidden="true" style="margin-top: 15px;"></i><sup style="color: red">{{comment.length}}</sup>
+          </h2>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <div *ngFor="let com of comment ; index as i">
+              <a class="dropdown-item" [routerLink]="['/detail',com.house?.id]"  (click)="isRead(com.id)" >
+                  Bạn có 1 nhận xét chưa đọc từ ngôi nhà {{com.house?.houseName}} </a>
+          </div>
+          </div>
+        </li>
 
       </ul>
     </div>
